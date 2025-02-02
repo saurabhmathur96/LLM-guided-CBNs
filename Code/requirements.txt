@@ -80,7 +80,6 @@ nbconvert==7.9.2
 nbformat==5.9.2
 nest-asyncio==1.5.8
 networkx==3.2.1
--e git+https://github.com/saurabhmathur96/noisy_or@621b22f8254252688de0ef02aa69ecbf9b1428bd#egg=noisy_or
 notebook==7.0.7
 notebook_shim==0.2.3
 numpy==1.22.4
