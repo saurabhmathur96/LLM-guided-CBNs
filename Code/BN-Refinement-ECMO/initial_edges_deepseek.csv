@@ -1,0 +1,16 @@
+X,Y
+HighVIS,LowMAP
+LowMAP,HighLactate
+HighLactate,LowPH
+LowPlatelet,NeurologicalInjury
+LowMAP,NeurologicalInjury
+HighLactate,NeurologicalInjury
+LowPH,HighMAP
+RelativePCO2,LowPH
+LowPH,NeurologicalInjury
+HighMAP,LowPlatelet
+HighVIS,HighMAP
+HighVIS,LowPlatelet
+RelativePCO2,HighLactate
+RelativePCO2,HighMAP
+HighMAP,NeurologicalInjury
