@@ -12,6 +12,7 @@ from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.pipeline import Pipeline
 from pgmpy.estimators import  BicScore, MaximumLikelihoodEstimator, BayesianEstimator
+# from pgmpy.estimators import HillClimbSearch
 from pgmpy.factors.discrete import TabularCPD
 from pgmpy.models import BayesianNetwork
 from pgmpy.readwrite import BIFReader
