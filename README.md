@@ -3,7 +3,7 @@ This is the repository containing the supplementary and the code for **LLM-guide
 
 
 ## Attachments
-1. **Code**: Contains all the code relevant to the project (The data is absent)
+1. **Code**: Contains all the code relevant to the project (The data is absent). We use the MDL score from (Friedman and Goldszmidt, UAI 1996) which exploits local structure by learning tree-structured conditionals instead of tabular ones.
 
 2. **Supplementary Text.pdf**: The pdf containing all the additional information, including expert elicited and data driven graphs, LLM prompts and all 5 responses for each LLM, as well as the graphs, before and after subtractive and full refinement. It is advised to download the pdf file directory as the file content may be too big to be rendered properly online
 
