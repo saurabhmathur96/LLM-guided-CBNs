@@ -1,0 +1,68 @@
+network unknown {
+}
+variable HighLactate {
+    type discrete [ 2 ] { 0, 1 };
+    property weight = None ;
+}
+variable HighMAP {
+    type discrete [ 2 ] { 0, 1 };
+    property weight = None ;
+}
+variable HighVIS {
+    type discrete [ 2 ] { 0, 1 };
+    property weight = None ;
+}
+variable LowMAP {
+    type discrete [ 2 ] { 0, 1 };
+    property weight = None ;
+}
+variable LowPH {
+    type discrete [ 2 ] { 0, 1 };
+    property weight = None ;
+}
+variable LowPlatelet {
+    type discrete [ 2 ] { 0, 1 };
+    property weight = None ;
+}
+variable NeurologicalInjury {
+    type discrete [ 2 ] { 0, 1 };
+    property weight = None ;
+}
+variable RelativePCO2 {
+    type discrete [ 2 ] { 0, 1 };
+    property weight = None ;
+}
+probability ( HighLactate | LowMAP ) {
+    ( 0 ) 0.5, 0.5;
+    ( 1 ) 0.15789473684210525, 0.8421052631578947;
+
+}
+probability ( HighMAP ) {
+    table 0.9452054794520548, 0.0547945205479452 ;
+}
+probability ( HighVIS | LowMAP ) {
+    ( 0 ) 0.875, 0.125;
+    ( 1 ) 0.47368421052631576, 0.5263157894736842;
+
+}
+probability ( LowMAP ) {
+    table 0.7534246575342466, 0.2465753424657534 ;
+}
+probability ( LowPH ) {
+    table 0.8904109589041096, 0.1095890410958904 ;
+}
+probability ( LowPlatelet | HighLactate ) {
+    ( 0 ) 0.8064516129032258, 0.1935483870967742;
+    ( 1 ) 0.5681818181818182, 0.4318181818181818;
+
+}
+probability ( NeurologicalInjury ) {
+    table 0.7534246575342466, 0.2465753424657534 ;
+}
+probability ( RelativePCO2 | LowPH, NeurologicalInjury ) {
+    ( 0, 0 ) 0.6730769230769231, 0.3269230769230769;
+    ( 0, 1 ) 0.9375, 0.0625;
+    ( 1, 0 ) 0.3333333333333333, 0.6666666666666666;
+    ( 1, 1 ) 0.4, 0.6;
+
+}
