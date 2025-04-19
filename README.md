@@ -1,48 +1,30 @@
-# Submission for AIME 2025
-This is the repository containing the supplementary and the code for **LLM-guided Causal Bayesian Network construction for pediatric patients on ECMO**.
+# LLM-guided-CBN
+This repository contains the supplementary material and the code for **LLM-guided Causal Bayesian Network construction for pediatric patients on ECMO** for **AIME 2025** conference.
 
 
-## Attachments
-1. **Code**: Contains all the code relevant to the project (The data is absent). We use the MDL score from (Friedman and Goldszmidt, UAI 1996) which exploits local structure by learning tree-structured conditionals instead of tabular ones.
+## Components
+### Supplementary Text
+The file **Supplementary Text.pdf** contains additional information, including expert-elicited and data-driven graphs, LLM prompts, and all 5 responses for each LLM, as well as the graphs before and after subtractive and full refinement. Do note that all the results added in the supplementary are on the original dataset and not on bootstrap samples
 
-2. **Supplementary Text.pdf**: The pdf containing all the additional information, including expert elicited and data driven graphs, LLM prompts and all 5 responses for each LLM, as well as the graphs, before and after subtractive and full refinement. It is advised to download the pdf file directory as the file content may be too big to be rendered properly online
+### Running the Code
+1. It is advised to use an IDE like PyCharm to run the code, as some of the code might cause errors if used from the terminal
 
-## Running the Code
-1. To run the code in the Code directory, please follow the following steps (Assuming all the relevant data files are available and in relevant subdirectories).
-    1. Create the environment
-        ```bash
-        cd Code
-        conda create -n "ecmo" python=3.10
-        conda activate ecmo
-        pip install -r requirements.txt
-    2. Process the pelican data to construct an hourly dataset for the 71 patients
-        ```bash
-        python process_pelican_data.py
-        ```
-    3. Construct the boolean dataset for ECMO
-        ```bash
-        python create_dataset_for_pelican.py
-        ```
-    4. Move the dataset to the relevant area and move to the directory BN-Refinement
-        ```bash
-        mkdir BN-Refinement-ECMO/ecmo_data
-        mv post_pelican ./BN-Refinement-ECMO/ecmo_data
-        cd BN_Refinement-ECMO
-        ```
-2. Once the dataset is generated, we can run the deletion-only refinement by selecting the relevant set of initial edges for combined by running 
-    ```bash 
-    python refine.py
-    ```
-    1. To change the graph used, change the initial edges provided by setting the initial edges to one of combined, gpt40, gemini, llama, deepseek in ```refine.py```
-    2. To perform full refinement, comment out line 15 in ```structure_learning.py``` and comment line 19. This changes the kind of HillClimb used
+2. Assuming the code is properly opened in an IDE, and all the dataset file is provided (not included as part of the code)
+   1. Create a conda environment using the ```requirements.txt``` and set it as the environment for the project
+      **NOTE*:* You might run into errors installing the cdt package used to compute metrics. Please refer to [Causal Discovery Tool Box]{https://fentechsolutions.github.io/CausalDiscoveryToolbox/html/index.html} to properly install the
+      package
 
-3. To learn causal graphs using data
-    ```bash
-    python learn_from_data_pc.py # For Learning a PC model
-    python refine_only_data.py # For Learning a Greedy Score and Search model
-    ```
+    2. Create bootstrap samples for the data by running the file ```datasets/create_bootstrap_samples.py``` file. Set the bootstrap samples by changing the variable ```num_samples``` in the file.
 
-4. To compute the SHD and SID for the graphs run
-    ```bash
-    python compute_shd_sid_spurious.py
-    ```
+    3. Run the data only baselines by running the files `in ```data_based_methods``` folder. Run the following files in order:
+        1. Run ```learn_from_data_gss.py``` for greedy search and score on the data
+        2. Run ```learn_from_data_oc.py``` for PC (Peter and Clarke) algorithm on the data
+        3. Run ```learn_from_data_fci.py``` for FCI (Fast Causal Inference) algorithm on the data  
+
+    4. For subtractive refinement, run ```refine_1.py```
+
+    5. For full refinement, run ```refine_1.py``` followed by ```refine_2.py```
+
+    6. Compute the metrics (SHD, SID, Spurious Edges) by running the ```compute_metrics.py```. Ensure the number of bootstrap samples is the same as the number of samples
+
+    7. Plot the graphs for the different methods and samples by running the file ```plot_graphs.py```
