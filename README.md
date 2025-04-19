@@ -29,3 +29,5 @@ The file **Supplementary Text.pdf** contains additional information, including e
     6. Compute the metrics (SHD, SID, Spurious Edges) by running the ```compute_metrics.py```. Ensure the number of bootstrap samples is the same as the number of samples
 
     7. Plot the graphs for the different methods and samples by running the file ```plot_graphs.py```
+
+## Citation
