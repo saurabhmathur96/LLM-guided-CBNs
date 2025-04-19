@@ -11,6 +11,7 @@ The file **Supplementary Text.pdf** contains additional information, including e
 
 2. Assuming the code is properly opened in an IDE, and all the dataset file is provided (not included as part of the code)
    1. Create a conda environment using the ```requirements.txt``` and set it as the environment for the project
+
       **NOTE*:* You might run into errors installing the cdt package used to compute metrics. Please refer to [Causal Discovery Tool Box](https://fentechsolutions.github.io/CausalDiscoveryToolbox/html/index.html) to properly install the
       package
 
