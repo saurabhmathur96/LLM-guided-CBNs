@@ -6,7 +6,7 @@ This repository contains the supplementary material and the code for **LLM-guide
 ### Supplementary Text
 The file **Supplementary Text.pdf** contains additional information, including expert-elicited and data-driven graphs, LLM prompts, and all 5 responses for each LLM, as well as the graphs before and after subtractive and full refinement. Do note that all the results added in the supplementary are on the original dataset and not on bootstrap samples
 
-### Running the Code
+### Code
 1. It is advised to use an IDE like PyCharm to run the code, as some of the code might cause errors if used from the terminal
 
 2. Assuming the code is properly opened in an IDE, and all the dataset file is provided (not included as part of the code)
