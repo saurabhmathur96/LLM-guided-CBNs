@@ -15,7 +15,7 @@ The file **Supplementary Text.pdf** contains additional information, including e
       **NOTE*:* You might run into errors installing the cdt package used to compute metrics. Please refer to [Causal Discovery Tool Box](https://fentechsolutions.github.io/CausalDiscoveryToolbox/html/index.html) to properly install the
       package
 
-    2. Create bootstrap samples for the data by running the file ```datasets/create_bootstrap_samples.py``` file. Set the bootstrap samples by changing the variable ```num_samples``` in the file.
+    2. Create bootstrap samples for the data by running the file ```datasets/create_bootstrap_samples.py``` file. Set the bootstrap samples by changing the variable ```n_samples``` in the file.
 
     3. Run the data only baselines by running the files `in ```data_based_methods``` folder. Run the following files in order:
         1. Run ```learn_from_data_gss.py``` for greedy search and score on the data
