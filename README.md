@@ -31,6 +31,7 @@ The file **Supplementary Text.pdf** contains additional information, including e
     7. Plot the graphs for the different methods and samples by running the file ```plot_graphs.py```
 
 ## Citation
+If you use or build upon our code, kindly cite 
 ```
 @inproceedings{mathur2025llm,
   title={LLM-Guided Causal Bayesian Network Construction for Pediatric Patients on ECMO},
