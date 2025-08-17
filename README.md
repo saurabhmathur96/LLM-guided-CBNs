@@ -31,4 +31,14 @@ The file **Supplementary Text.pdf** contains additional information, including e
     7. Plot the graphs for the different methods and samples by running the file ```plot_graphs.py```
 
 ## Citation
+```
+@inproceedings{mathur2025llm,
+  title={LLM-Guided Causal Bayesian Network Construction for Pediatric Patients on ECMO},
+  author={Mathur, Saurabh and Singh, Ranveer and Skinner, Michael and Sanford, Ethan and Shah, Neel and Reeder, Phillip and Raman, Lakshmi and Natarajan, Sriraam},
+  booktitle={International Conference on Artificial Intelligence in Medicine},
+  pages={255--260},
+  year={2025},
+  organization={Springer}
+}
+```
 
